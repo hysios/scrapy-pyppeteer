@@ -30,7 +30,7 @@ class ScrapyPyppeteerDownloaderMiddleware:
         if isinstance(request, BrowserRequest):
             return _aio_as_deferred(self.process_browser_request(request))
         else:
-            return request
+            return None
 
     async def process_browser_request(self, request: BrowserRequest):
         if self._browser is None:
